@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biology with F AL-Haddad — Learning Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">🔬 Biology with <span>F AL-Haddad</span></a>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">🏠 الرئيسية</a>
+    <a class="nav-btn" href="about.html">👩‍🔬 About Me</a>
+    <a class="nav-btn" href="games.html">🎮 Edu Games</a>
+    <a class="nav-btn active" href="hub.html">📚 Learning Hub</a>
+    <a class="nav-btn" href="facts.html">💡 Fun Facts</a>
+    <a class="nav-btn" href="gallery.html">🖼 Gallery</a>
+  </div>
+</nav>
+<div class="points-bar">
+  <span>⭐ نقاطك:</span>
+  <span class="points-val" id="total-pts">0</span>
+  <span style="opacity:0.6">|</span>
+  <span>شاراتك:</span>
+  <span id="badge-list" style="display:flex;gap:4px;align-items:center"></span>
+</div>
+
+<main class="main">
+
+  <div class="section-title">📚 Learning Hub — مركز التعلّم</div>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">
+    اقرئي الشرح أولاً، ثم اختبري نفسك باللعبة المرتبطة بكل موضوع!
+  </p>
+
+  <div class="topic-card">
+    <div class="topic-header" onclick="toggleTopic(0)">
+      <span class="topic-icon">🔵</span>
+      <div class="topic-title">تركيب الخلية — Cell Structure</div>
+      <span class="topic-toggle" id="tog-0">▼</span>
+    </div>
+    <div class="topic-body" id="tb-0">
+      <p class="topic-text">
+        الخلية هي الوحدة الأساسية للحياة. تحتوي على عضيات متخصصة لكل منها وظيفة محددة.
+        الغشاء البلازمي يتحكم في دخول وخروج المواد من خلال نفاذيته الانتقائية.
+        النواة تحتوي على الحمض النووي DNA وتُعدّ مركز التحكم في الخلية.
+        الميتوكوندريا تُنتج الطاقة على شكل ATP عبر عملية التنفس الخلوي.
+        الرايبوسومات تُصنّع البروتينات اللازمة لوظائف الخلية.
+      </p>
+      <ul class="topic-points">
+        <li>الغشاء البلازمي: نفاذية انتقائية تتحكم في حركة المواد</li>
+        <li>النواة: مركز التحكم، تحتوي على DNA</li>
+        <li>الميتوكوندريا: مصنع الطاقة (ATP)</li>
+        <li>الرايبوسومات: تصنيع البروتينات</li>
+        <li>جهاز غولجي: تعديل وتغليف وشحن البروتينات</li>
+        <li>الشبكة الإندوبلازمية: نقل المواد داخل الخلية</li>
+      </ul>
+      <a class="quiz-mini-btn" href="games.html">🎮 اختبري نفسك — لعبة تركيب الخلية</a>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header" onclick="toggleTopic(1)">
+      <span class="topic-icon">🔄</span>
+      <div class="topic-title">الانقسام الخلوي — Cell Division</div>
+      <span class="topic-toggle" id="tog-1">▼</span>
+    </div>
+    <div class="topic-body" id="tb-1">
+      <p class="topic-text">
+        الانقسام الخلوي نوعان: المتساوي (Mitosis) والمنصف (Meiosis).
+        الانقسام المتساوي يُنتج خليتين ابنتين متطابقتين للنمو وتجديد الخلايا، ويمر بأربع مراحل.
+        الانقسام المنصف يُنتج 4 خلايا تناسلية (أمشاج) تحتوي على نصف عدد الكروموسومات.
+      </p>
+      <ul class="topic-points">
+        <li>Prophase (التمهيدي): ظهور الكروموسومات بوضوح</li>
+        <li>Metaphase (الاستوائي): تراص الكروموسومات في المنتصف</li>
+        <li>Anaphase (الانفصالي): انفصال الكروماتيدات الشقيقة</li>
+        <li>Telophase (النهائي): تكوين خليتين جديدتين</li>
+        <li>الانقسام المنصف: ينتج 4 خلايا بنصف العدد الكروموسومي</li>
+      </ul>
+      <a class="quiz-mini-btn" href="games.html">🎮 اختبري نفسك — لعبة الانقسام الخلوي</a>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header" onclick="toggleTopic(2)">
+      <span class="topic-icon">🌱</span>
+      <div class="topic-title">قوانين مندل — Mendel's Laws</div>
+      <span class="topic-toggle" id="tog-2">▼</span>
+    </div>
+    <div class="topic-body" id="tb-2">
+      <p class="topic-text">
+        وضع غريغور مندل ثلاثة قوانين أساسية للوراثة من خلال تجاربه على نباتات البازلاء.
+        قانون السيادة: الصفة السائدة تُخفي الصفة المتنحية في الجيل الأول.
+        قانون الانعزال: كل فرد يحمل أليلين لكل صفة، وينفصلان عند تكوين الأمشاج.
+        قانون التوزيع الحر: توزيع الأليلات لصفة مستقل عن توزيع أليلات صفة أخرى.
+      </p>
+      <ul class="topic-points">
+        <li>السيادة التامة: الصفة السائدة تُخفي المتنحية في الجيل F1</li>
+        <li>AA = سائد خالص | Aa = سائد هجين | aa = متنحٍ خالص</li>
+        <li>نسبة 3:1 في الجيل F2 لتزاوج Aa × Aa</li>
+        <li>الانعزال: انفصال الأليلين عند تكوين الأمشاج</li>
+        <li>التوزيع الحر: استقلالية الصفات في الانتقال</li>
+      </ul>
+      <a class="quiz-mini-btn" href="games.html">🎮 اختبري نفسك — لعبة قوانين مندل</a>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header" onclick="toggleTopic(3)">
+      <span class="topic-icon">⚡</span>
+      <div class="topic-title">الطفرات الجينية — Gene Mutations</div>
+      <span class="topic-toggle" id="tog-3">▼</span>
+    </div>
+    <div class="topic-body" id="tb-3">
+      <p class="topic-text">
+        الطفرات تغييرات في تسلسل الـ DNA. قد تكون ضارة أو نافعة أو محايدة.
+        تحدث بشكل عفوي أو نتيجة عوامل خارجية كالأشعة فوق البنفسجية والمواد الكيميائية.
+        أنواعها الرئيسية: الحذف (إزالة قاعدة)، الإضافة (إدخال قاعدة)، الاستبدال (تغيير قاعدة بأخرى).
+      </p>
+      <ul class="topic-points">
+        <li>الحذف (Deletion): إزالة قاعدة — يُسبب إزاحة الإطار</li>
+        <li>الإضافة (Insertion): إدخال قاعدة — يُسبب إزاحة الإطار</li>
+        <li>الاستبدال (Substitution): تغيير قاعدة بأخرى</li>
+        <li>الطفرة الصامتة: لا تُغير البروتين الناتج</li>
+        <li>فقر الدم المنجلي: مثال على طفرة استبدال</li>
+      </ul>
+      <a class="quiz-mini-btn" href="games.html">🎮 اختبري نفسك — لعبة الطفرات الجينية</a>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header" onclick="toggleTopic(4)">
+      <span class="topic-icon">🧬</span>
+      <div class="topic-title">الحمض النووي DNA</div>
+      <span class="topic-toggle" id="tog-4">▼</span>
+    </div>
+    <div class="topic-body" id="tb-4">
+      <p class="topic-text">
+        DNA هو جزيء الحياة، يحمل التعليمات الوراثية لجميع الكائنات الحية.
+        يتكوّن من خيطين ملتويين على شكل حلزون مزدوج (Double Helix).
+        كل نيوكليوتيد يتكوّن من: قاعدة نيتروجينية + سكر ديوكسيريبوز + مجموعة فوسفات.
+        النسخ يحدث في النواة (DNA → mRNA)، والترجمة في الرايبوسومات (mRNA → بروتين).
+      </p>
+      <ul class="topic-points">
+        <li>القواعد النيتروجينية: A-T وG-C (تكاملية)</li>
+        <li>النسخ (Transcription): DNA → mRNA في النواة</li>
+        <li>الترجمة (Translation): mRNA → بروتين في الرايبوسوم</li>
+        <li>الهيلكيز: إنزيم يفك خيوط DNA</li>
+        <li>RNA البوليميراز: يصنع mRNA أثناء النسخ</li>
+      </ul>
+      <a class="quiz-mini-btn" href="games.html">🎮 اختبري نفسك — لعبة الـ DNA</a>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header" onclick="toggleTopic(5)">
+      <span class="topic-icon">🔬</span>
+      <div class="topic-title">تطبيقات الوراثة — Genetics Applications</div>
+      <span class="topic-toggle" id="tog-5">▼</span>
+    </div>
+    <div class="topic-body" id="tb-5">
+      <p class="topic-text">
+        تطبيقات الوراثة ثورة علمية تُغيّر العالم. الهندسة الوراثية تُتيح تعديل جينات الكائنات
+        لأغراض طبية وزراعية وبيئية. تقنية CRISPR أحدثت ثورة في دقة تعديل الجينات.
+        البصمة الوراثية تُستخدم في الطب الشرعي وتحديد الهوية. الاستنساخ ينتج نسخاً متطابقة وراثياً.
+      </p>
+      <ul class="topic-points">
+        <li>الهندسة الوراثية: تعديل جينات الكائنات لأغراض مفيدة</li>
+        <li>CRISPR-Cas9: تقنية تحرير الجينات بدقة عالية</li>
+        <li>البصمة الوراثية: تحديد الهوية وعلاقات القرابة</li>
+        <li>الاستنساخ: إنتاج نسخ وراثية متطابقة</li>
+        <li>الكائنات المحوّرة وراثياً (GMO): تطبيقات زراعية وطبية</li>
+      </ul>
+      <a class="quiz-mini-btn" href="games.html">🎮 اختبري نفسك — لعبة تطبيقات الوراثة</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  صُمّم بـ ❤️ بواسطة <strong>فاطمة عبدالله حمد الحداد</strong> — مدرسة جدحفص الثانوية للبنات
+</footer>
+
+<script src="games.js"></script>
+<script>
+function toggleTopic(i) {
+  const body = document.getElementById('tb-' + i);
+  const tog = document.getElementById('tog-' + i);
+  const isOpen = body.classList.toggle('open');
+  tog.classList.toggle('open', isOpen);
+  tog.textContent = isOpen ? '▲' : '▼';
+}
+</script>
+</body>
+</html>

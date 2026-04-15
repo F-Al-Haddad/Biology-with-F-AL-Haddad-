@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biology with F AL-Haddad — Edu Games</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">🔬 Biology with <span>F AL-Haddad</span></a>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">🏠 الرئيسية</a>
+    <a class="nav-btn" href="about.html">👩‍🔬 About Me</a>
+    <a class="nav-btn active" href="games.html">🎮 Edu Games</a>
+    <a class="nav-btn" href="hub.html">📚 Learning Hub</a>
+    <a class="nav-btn" href="facts.html">💡 Fun Facts</a>
+    <a class="nav-btn" href="gallery.html">🖼 Gallery</a>
+  </div>
+</nav>
+<div class="points-bar">
+  <span>⭐ نقاطك:</span>
+  <span class="points-val" id="total-pts">0</span>
+  <span style="opacity:0.6">|</span>
+  <span>شاراتك:</span>
+  <span id="badge-list" style="display:flex;gap:4px;align-items:center"></span>
+</div>
+
+<main class="main">
+
+  <div class="section-title">🎮 الألعاب التعليمية</div>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">
+    كل لعبة تحتوي على <strong>6 أسئلة</strong> مرتبطة بمقرر الخلية والوراثة.
+    أجيبي بشكل صحيح لتجمعي النقاط والشارات! ⭐
+  </p>
+
+  <div class="grid-3" id="games-grid"></div>
+
+</main>
+
+<!-- QUIZ MODAL -->
+<div class="quiz-overlay" id="quiz-overlay">
+  <div class="quiz-box">
+    <button class="quiz-close" onclick="closeQuiz()">✕</button>
+    <div id="quiz-content"></div>
+  </div>
+</div>
+
+<footer>
+  صُمّم بـ ❤️ بواسطة <strong>فاطمة عبدالله حمد الحداد</strong> — مدرسة جدحفص الثانوية للبنات
+</footer>
+
+<script src="games.js"></script>
+<script>
+  // Render game cards
+  const grid = document.getElementById('games-grid');
+  GAMES.forEach(game => {
+    const card = document.createElement('div');
+    card.className = 'game-card';
+    card.innerHTML = `
+      <div class="game-header">
+        <div class="game-icon">${game.icon}</div>
+        <div>
+          <div class="game-title">${game.title}</div>
+          <div class="game-sub">${game.sub}</div>
+        </div>
+      </div>
+      <div class="game-topics">
+        ${game.questions.slice(0,2).map(q => '• ' + q.q).join('<br>')}
+        <br><span style="color:var(--accent);font-weight:700">+ ${game.questions.length - 2} أسئلة أخرى</span>
+      </div>
+      <button class="play-btn" onclick="startGame(${game.id})">▶ ابدأي اللعبة</button>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+</body>
+</html>
